@@ -21,4 +21,10 @@ Projetar um sistema para suportar milhões de usuários simultâneos pode exigir
 
 Uma interface de usuário simplificada e fácil de usar atende a um público maior, mas pode sacrificar opções de personalização. Por outro lado, permitir personalizações detalhadas pode atender melhor a usuários avançados, mas dificultar a usabilidade para iniciantes.
 
+<h2>Atividade 3<h2>
 
+<link> </link>
+
+<h2>Atividade 4<h2>
+
+<h3> UML </h3>
