@@ -23,8 +23,12 @@ Uma interface de usuário simplificada e fácil de usar atende a um público mai
 
 <h2>Atividade 3<h2>
 
-<link> </link>
+<a href="[https://exemplo.com](https://github.com/jaupventur/bertoti/tree/main/EngSW/ExercicioAula/ExercicioAula)" target="_blank">Acesse o o projeto aqui</a>
+
 
 <h2>Atividade 4<h2>
 
 <h3> UML </h3>
+
+<img src="[imagens/logo.png](https://github.com/jaupventur/bertoti/commit/849930b8e0cc3291d0f3db40d2577c0276b59403)" alt="Logo do Projeto" width="200">
+
