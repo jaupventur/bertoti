@@ -30,5 +30,5 @@ Uma interface de usuário simplificada e fácil de usar atende a um público mai
 
 <h3> UML </h3>
 
-<img src="https://github.com/jaupventur/bertoti/commit/849930b8e0cc3291d0f3db40d2577c0276b59403">
+<img src="EngSW/UML_LojaVirtualClientes.jpg">
 
