@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotecaria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="logo">
+            <img src="src/Bibliotecaria-removebg-preview.png" alt="Logo da Bibliotecaria">
+            </div>
+    <div id="container">
+        
+            
+        
+        
+        <div id="buttons">
+            <button id="list-button" class="active">Livros</button>
+            <button id="create-button">Cadastrar Livro</button>
+            <button id="edit-button">Editar Livro</button>
+            <button id="delete-button">Remover Livro</button>
+            <button id="reserve-button">Reservas</button>
+            <button id="return-button">Devoluções</button>
+        </div>
+
+        <div id="list-tab" class="tab active">
+            <h2>Acervo da Biblioteca</h2>
+            <div class="search-container">
+                <input type="text" id="search-title" placeholder="Buscar por título">
+                <input type="text" id="search-author" placeholder="Buscar por autor">
+                <input type="text" id="search-genre" placeholder="Buscar por gênero">
+                <button id="search-button">Buscar</button>
+                <button id="clear-search">Limpar</button>
+            </div>
+            <div id="list-content" class="book-list"></div>
+        </div>
+
+        <div id="create-tab" class="tab">
+            <h2>Cadastrar Novo Livro</h2>
+            <div class="form-group">
+                <label for="create-title">Título:</label>
+                <input type="text" id="create-title" placeholder="Título do livro">
+            </div>
+            <div class="form-group">
+                <label for="create-author">Autor:</label>
+                <input type="text" id="create-author" placeholder="Nome do autor">
+            </div>
+            <div class="form-group">
+                <label for="create-genre">Gênero:</label>
+                <input type="text" id="create-genre" placeholder="Gênero literário">
+            </div>
+            <div class="form-group">
+                <label for="create-publication">Data de Publicação:</label>
+                <input type="date" id="create-publication">
+            </div>
+            <div class="form-group">
+                <label for="create-quantity">Quantidade Disponível:</label>
+                <input type="number" id="create-quantity" min="1" value="1">
+            </div>
+            <button id="create-submit" class="action-button">Cadastrar Livro</button>
+        </div>
+
+        <div id="edit-tab" class="tab">
+            <h2>Editar Livro</h2>
+            <div class="form-group">
+                <label for="edit-select">Selecione o livro:</label>
+                <select id="edit-select"></select>
+            </div>
+            <div class="form-group">
+                <label for="edit-title">Título:</label>
+                <input type="text" id="edit-title" placeholder="Título do livro">
+            </div>
+            <div class="form-group">
+                <label for="edit-author">Autor:</label>
+                <input type="text" id="edit-author" placeholder="Nome do autor">
+            </div>
+            <div class="form-group">
+                <label for="edit-genre">Gênero:</label>
+                <input type="text" id="edit-genre" placeholder="Gênero literário">
+            </div>
+            <div class="form-group">
+                <label for="edit-publication">Data de Publicação:</label>
+                <input type="date" id="edit-publication">
+            </div>
+            <div class="form-group">
+                <label for="edit-quantity">Quantidade Disponível:</label>
+                <input type="number" id="edit-quantity" min="0" value="1">
+            </div>
+            <button id="edit-submit" class="action-button">Salvar Alterações</button>
+        </div>
+
+        <div id="delete-tab" class="tab">
+            <h2>Remover Livro</h2>
+            <div class="form-group">
+                <label for="delete-select">Selecione o livro para remover:</label>
+                <select id="delete-select"></select>
+            </div>
+            <div id="delete-confirmation" class="confirmation">
+                <p>Tem certeza que deseja remover este livro do sistema?</p>
+                <p><strong>Atenção:</strong> Livros com reservas ativas não podem ser removidos.</p>
+            </div>
+            <button id="delete-submit" class="action-button danger">Remover Livro</button>
+        </div>
+
+        <div id="reserve-tab" class="tab">
+            <h2>Gerenciar Reservas</h2>
+            <div class="form-container">
+                <div class="form-section">
+                    <h3>Nova Reserva</h3>
+                    <div class="form-group">
+                        <label for="reserve-book">Livro:</label>
+                        <select id="reserve-book"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reserve-user-name">Nome do Usuário:</label>
+                        <input type="text" id="reserve-user-name" placeholder="Nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="reserve-user-email">Email:</label>
+                        <input type="email" id="reserve-user-email" placeholder="email@exemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="reserve-user-phone">Telefone:</label>
+                        <input type="tel" id="reserve-user-phone" placeholder="(00) 00000-0000">
+                    </div>
+                    <button id="reserve-submit" class="action-button">Reservar Livro</button>
+                </div>
+
+                <div class="list-section">
+                    <h3>Reservas Ativas</h3>
+                    <div class="search-container">
+                        <input type="text" id="search-reservation" placeholder="Buscar por nome de usuário">
+                        <button id="search-reservation-button">Buscar</button>
+                    </div>
+                    <div id="active-reservations" class="reservation-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="return-tab" class="tab">
+            <h2>Devoluções</h2>
+            <div class="form-container">
+                <div class="form-section">
+                    <h3>Registro de Devolução</h3>
+                    <div class="form-group">
+                        <label for="return-reservation">Selecione a reserva:</label>
+                        <select id="return-reservation"></select>
+                    </div>
+                    <div class="reservation-details" id="return-details">
+                        <p>Livro: <span id="return-book-title">--</span></p>
+                        <p>Usuário: <span id="return-user-name">--</span></p>
+                        <p>Data de Reserva: <span id="return-date">--</span></p>
+                        <p>Data Prevista: <span id="return-expected-date">--</span></p>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="return-submit" class="action-button">Registrar Devolução</button>
+                        <button id="cancel-reservation" class="action-button secondary">Cancelar Reserva</button>
+                    </div>
+                </div>
+
+                <div class="list-section">
+                    <h3>Histórico de Devoluções</h3>
+                    <div id="return-history" class="reservation-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Bibliotecaria &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
